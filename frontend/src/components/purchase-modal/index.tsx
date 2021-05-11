@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Modal, { ModalProps } from "../modal";
 import { PurchaseModalWrapper } from "./styles";
 import { iProduct } from "../../helpers/interfaces";
+import { useHistory } from "react-router";
 
 interface PurchaseModalProps extends ModalProps {
   product: iProduct;
@@ -11,6 +12,7 @@ export default function PurchaseModal({
   product,
   ...props
 }: PurchaseModalProps) {
+  const history = useHistory();
   const [amount, setAmount] = useState(1);
   const [totalPrice, setTotalPrice] = useState(1);
 
@@ -21,7 +23,7 @@ export default function PurchaseModal({
   const addToAmount = () =>
     setAmount((previous) => validateValue(previous, previous + 1));
 
-  const handleSubmit = () => void 0;
+  const handleSubmit = () => history.push("/checkout");
 
   useEffect(() => {
     setTotalPrice(amount * product.price);

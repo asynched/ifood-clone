@@ -31,7 +31,16 @@ public class Seller {
   private String address;
 
   @Column(nullable = false)
-  private String city;
+  private String image_url;
+
+  @Column(nullable = false)
+  private String category;
+
+  @Column(nullable = false)
+  private double rating = 0;
+
+  @Column(nullable = false)
+  private double distance = 0;
 
   @OneToMany(mappedBy = "seller")
   private List<Product> products;

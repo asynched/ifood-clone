@@ -1,6 +1,4 @@
-// Modules
 import React, { useEffect, useState } from "react";
-import { RouteComponentProps, useParams } from "react-router-dom";
 
 // Components
 import MainLayout from "../../layouts/main-layout/main-layout";
@@ -13,34 +11,18 @@ import ErrorLayout from "../../layouts/error-layout";
 import { iProduct, iSeller } from "../../helpers/interfaces";
 import { getSeller } from "../../helpers/sellers";
 import PurchaseModal from "../../components/purchase-modal";
+import { RouteComponentProps, useParams } from "react-router";
 
 interface SellerPageParams {
   id: string;
 }
 
-export default function SellerPage() {
-  const params = useParams<SellerPageParams>();
+interface SellerPageMatchProps extends RouteComponentProps<SellerPageParams> {}
 
-  const [seller, setSeller] = useState<iSeller>({
-    seller_id: 1,
-    name: "Nina docinhos",
-    address: "Rua dos bobos, n° 0.",
-    category: "Doces gourmet",
-    distance: 10.5,
-    opening_hours: "10h às 22h",
-    image_url: "https://google.com",
-    rating: 4.9,
-    products: [
-      // {
-      //   product_id: 1,
-      //   name: "Brownie da Nina",
-      //   description: "O melhor brownie que você já comeu!",
-      //   price: 2.5,
-      //   image_url:
-      //     "https://img.itdg.com.br/tdg/images/recipes/000/121/717/289288/289288_original.jpg?mode=crop&width=710&height=400",
-      // },
-    ],
-  });
+export default function SellerPage({ match }: SellerPageMatchProps) {
+  const id = match.params.id;
+
+  const [seller, setSeller] = useState<iSeller>();
 
   const [error, setError] = useState(false);
   const [displayPurchaseModal, setDisplayPurchaseModal] = useState(false);
@@ -55,7 +37,7 @@ export default function SellerPage() {
   };
 
   useEffect(() => {
-    getSeller(params.id)
+    getSeller(id)
       .then((seller) => setSeller(seller))
       .catch((error) => {
         console.log(error);
@@ -63,13 +45,13 @@ export default function SellerPage() {
       });
   }, []);
 
-  // if (error) {
-  //   return <ErrorLayout />;
-  // }
+  if (error) {
+    return <ErrorLayout />;
+  }
 
-  // if (!seller) {
-  //   return <SpinnerModal isOpen={true} />;
-  // }
+  if (!seller) {
+    return <SpinnerModal isOpen={true} onRequestClose={() => void 0} />;
+  }
 
   if (seller)
     return (
@@ -81,7 +63,7 @@ export default function SellerPage() {
             product={purchaseModalProduct}
           />
         )}
-        <MainLayout active={"home"} title={`iFood | ${seller.name}`}>
+        <MainLayout active={"product"} title={`iFood | ${seller.name}`}>
           <SellerJumbotron>
             <h1>{seller.name}</h1>
             <p>{seller.address}</p>
@@ -126,4 +108,6 @@ export default function SellerPage() {
         </MainLayout>
       </>
     );
+
+  return <div>Aqui meu mano</div>;
 }
