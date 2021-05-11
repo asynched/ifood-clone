@@ -62,6 +62,13 @@ export const SellerJumbotron = styled.div`
 
 export const SellerContent = styled.div`
   padding: 1rem;
+
+  div.not-found {
+    img {
+      margin-top: 1rem;
+      width: 100%;
+    }
+  }
 `;
 
 export const ProductCard = styled.div`

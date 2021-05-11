@@ -4,6 +4,8 @@ export const HeaderContainer = styled.div`
   height: 4rem;
   width: 100%;
 
+  padding: 1rem;
+
   position: sticky;
   top: 0;
   left: 0;
@@ -13,11 +15,16 @@ export const HeaderContainer = styled.div`
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.125);
 
-  img {
-    width: 5rem;
+  a {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 5rem;
+    }
   }
 `;
