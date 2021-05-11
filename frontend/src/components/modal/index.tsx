@@ -3,7 +3,7 @@ import { ModalWrapper, ModalWrapperProps } from "./styles";
 
 export interface ModalProps extends ModalWrapperProps {
   children?: React.ReactNode;
-  onRequestClose?: () => void;
+  onRequestClose: () => void;
 }
 
 export default function Modal({

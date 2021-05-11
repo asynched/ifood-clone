@@ -8,13 +8,13 @@ export const MenuContainer = styled.div`
   width: 100vw;
   height: 4rem;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
   background: var(--gray-100);
 
-  div {
+  div,
+  a {
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -13,6 +13,7 @@ export interface iSeller {
   category: string;
   distance: number;
   address: string;
+  rating: number;
   opening_hours: string;
   products: iProduct[];
 }

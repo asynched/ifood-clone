@@ -42,6 +42,11 @@ export const PurchaseModalWrapper = styled.div`
     }
   }
 
+  h1 {
+    text-align: center;
+    color: var(--primary);
+  }
+
   p {
     margin: 0.5rem 0;
     span {
@@ -49,18 +54,43 @@ export const PurchaseModalWrapper = styled.div`
     }
   }
 
-  button.submit-button {
+  button.submit,
+  button.cancel {
     display: block;
     width: 100%;
     margin: 0.5rem 0;
     padding: 0.25rem 1rem;
+    border-radius: 0.5rem;
+    transition: var(--transition);
+  }
 
+  button.submit {
     background: var(--primary);
 
     border: none;
-    border-radius: 0.5rem;
 
     font-weight: bold;
     color: var(--white);
+
+    &:active,
+    &:focus,
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
+
+  button.cancel {
+    background: var(--white);
+    border: 1px solid var(--primary);
+
+    font-weight: 600;
+    color: var(--primary);
+
+    &:active,
+    &:focus,
+    &:hover {
+      background: var(--primary);
+      color: var(--white);
+    }
   }
 `;

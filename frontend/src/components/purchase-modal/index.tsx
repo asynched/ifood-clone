@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
-import Modal from "../modal";
+import Modal, { ModalProps } from "../modal";
 import { PurchaseModalWrapper } from "./styles";
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { iProduct } from "../../helpers/interfaces";
 
-export default function PurchaseModal() {
-  const price = 2.5;
+interface PurchaseModalProps extends ModalProps {
+  product: iProduct;
+}
+
+export default function PurchaseModal({
+  product,
+  ...props
+}: PurchaseModalProps) {
   const [amount, setAmount] = useState(1);
   const [totalPrice, setTotalPrice] = useState(1);
 
@@ -15,14 +21,16 @@ export default function PurchaseModal() {
   const addToAmount = () =>
     setAmount((previous) => validateValue(previous, previous + 1));
 
+  const handleSubmit = () => void 0;
+
   useEffect(() => {
-    setTotalPrice(amount * price);
+    setTotalPrice(amount * product.price);
   }, [amount]);
 
   return (
-    <Modal isOpen={true} onRequestClose={() => void 0}>
+    <Modal {...props}>
       <PurchaseModalWrapper>
-        <h1>$name</h1>
+        <h1>{product.name}</h1>
         <div className="quantity-menu">
           <h2>Quantidade</h2>
           <div>
@@ -34,8 +42,10 @@ export default function PurchaseModal() {
         <p>
           Valor total: <span>R${totalPrice.toFixed(2)}</span>
         </p>
-        <button className="submit-button">Cancelar</button>
-        <button className="submit-button" type="submit">
+        <button className="cancel" onClick={props.onRequestClose}>
+          Cancelar
+        </button>
+        <button className="submit" type="submit" onClick={handleSubmit}>
           Encomendar
         </button>
       </PurchaseModalWrapper>

@@ -6,7 +6,7 @@ import { ContentWrapper } from "./styles";
 interface MainLayoutProps {
   title?: string;
   children: React.ReactNode;
-  active?: "home" | "profile";
+  active?: "home" | "profile" | "product";
 }
 
 export default function MainLayout({

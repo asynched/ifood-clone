@@ -10,7 +10,7 @@ import Title from "../../components/title";
 import ErrorLayout from "../../layouts/error-layout";
 
 // Helpers
-import { iSeller } from "../../helpers/interfaces";
+import { iProduct, iSeller } from "../../helpers/interfaces";
 import { getSeller } from "../../helpers/sellers";
 import PurchaseModal from "../../components/purchase-modal";
 
@@ -23,7 +23,6 @@ export default function SellerPage({
 }: RouteComponentProps<SellerPageProps>) {
   const id = match.params.id;
 
-  const [error, setError] = useState(false);
   const [seller, setSeller] = useState<iSeller>({
     seller_id: 1,
     name: "Nina docinhos",
@@ -32,6 +31,7 @@ export default function SellerPage({
     distance: 10.5,
     opening_hours: "10h às 22h",
     image_url: "https://google.com",
+    rating: 4.9,
     products: [
       {
         product_id: 1,
@@ -43,6 +43,18 @@ export default function SellerPage({
       },
     ],
   });
+
+  const [error, setError] = useState(false);
+  const [displayPurchaseModal, setDisplayPurchaseModal] = useState(false);
+  const [purchaseModalProduct, setPurchaseModalProduct] = useState<iProduct>();
+
+  const toggleDisplayPurchaseModal = () =>
+    setDisplayPurchaseModal((previous) => !previous);
+
+  const handleProductClick = (product: iProduct) => () => {
+    setPurchaseModalProduct(product);
+    toggleDisplayPurchaseModal();
+  };
 
   useEffect(() => {
     getSeller(id)
@@ -64,7 +76,13 @@ export default function SellerPage({
   if (seller)
     return (
       <>
-        <PurchaseModal />
+        {displayPurchaseModal && purchaseModalProduct && (
+          <PurchaseModal
+            isOpen={displayPurchaseModal}
+            onRequestClose={toggleDisplayPurchaseModal}
+            product={purchaseModalProduct}
+          />
+        )}
         <MainLayout active={"home"} title={`iFood | ${seller.name}`}>
           <SellerJumbotron>
             <h1>{seller.name}</h1>
@@ -78,7 +96,10 @@ export default function SellerPage({
             </Title>
             {/* Products */}
             {seller.products.map((product) => (
-              <ProductCard key={product.product_id}>
+              <ProductCard
+                key={product.product_id}
+                onClick={handleProductClick(product)}
+              >
                 <div className="product-wrapper">
                   <div className="product-info-wrapper">
                     <h2>{product.name}</h2>
