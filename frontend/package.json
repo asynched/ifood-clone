@@ -2,7 +2,7 @@
   "license": "MIT",
   "name": "ifood-frontend",
   "version": "0.0.0",
-  "homepage": "https://github.com/Nxrth-x/ifood-clone",
+  "homepage": "https://nxrth-x.github.io/ifood-clone",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
