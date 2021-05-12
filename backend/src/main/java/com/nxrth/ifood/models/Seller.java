@@ -20,6 +20,7 @@ import lombok.Data;
 @Data
 @Entity
 public class Seller {
+  
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int seller_id;
