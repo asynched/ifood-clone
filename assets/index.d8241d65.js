@@ -1,4 +1,4 @@
-var e=Object.defineProperty,t=Object.prototype.hasOwnProperty,r=Object.getOwnPropertySymbols,m=Object.prototype.propertyIsEnumerable,n=(t,r,m)=>r in t?e(t,r,{enumerable:!0,configurable:!0,writable:!0,value:m}):t[r]=m,a=(e,a)=>{for(var o in a||(a={}))t.call(a,o)&&n(e,o,a[o]);if(r)for(var o of r(a))m.call(a,o)&&n(e,o,a[o]);return e};import{q as o,r as i,a as l,u as c,M as s,L as d,F as u,I as p,A as g,b as f,S as h,H as b,c as E,R as v,d as w}from"./vendor.4d3e592f.js";!function(e=".",t="__import__"){try{self[t]=new Function("u","return import(u)")}catch(r){const m=new URL(e,location),n=e=>{URL.revokeObjectURL(e.src),e.remove()};self[t]=e=>new Promise(((r,a)=>{const o=new URL(e,m);if(self[t].moduleMap[o])return r(self[t].moduleMap[o]);const i=new Blob([`import * as m from '${o}';`,`${t}.moduleMap['${o}']=m;`],{type:"text/javascript"}),l=Object.assign(document.createElement("script"),{type:"module",src:URL.createObjectURL(i),onerror(){a(new Error(`Failed to import: ${e}`)),n(l)},onload(){r(self[t].moduleMap[o]),n(l)}});document.head.appendChild(l)})),self[t].moduleMap={}}}("/assets/");const y=o.div`
+var e=Object.defineProperty,t=Object.prototype.hasOwnProperty,r=Object.getOwnPropertySymbols,m=Object.prototype.propertyIsEnumerable,n=(t,r,m)=>r in t?e(t,r,{enumerable:!0,configurable:!0,writable:!0,value:m}):t[r]=m,a=(e,a)=>{for(var o in a||(a={}))t.call(a,o)&&n(e,o,a[o]);if(r)for(var o of r(a))m.call(a,o)&&n(e,o,a[o]);return e};import{q as o,r as i,L as l,a as c,u as s,M as d,F as u,I as p,A as g,b as f,S as h,H as b,c as E,R as v,d as w}from"./vendor.4d3e592f.js";!function(e=".",t="__import__"){try{self[t]=new Function("u","return import(u)")}catch(r){const m=new URL(e,location),n=e=>{URL.revokeObjectURL(e.src),e.remove()};self[t]=e=>new Promise(((r,a)=>{const o=new URL(e,m);if(self[t].moduleMap[o])return r(self[t].moduleMap[o]);const i=new Blob([`import * as m from '${o}';`,`${t}.moduleMap['${o}']=m;`],{type:"text/javascript"}),l=Object.assign(document.createElement("script"),{type:"module",src:URL.createObjectURL(i),onerror(){a(new Error(`Failed to import: ${e}`)),n(l)},onload(){r(self[t].moduleMap[o]),n(l)}});document.head.appendChild(l)})),self[t].moduleMap={}}}("/assets/");const y=o.div`
   margin: 1.5rem 0;
 
   padding: 0.5rem 1rem;
@@ -29,7 +29,7 @@ var e=Object.defineProperty,t=Object.prototype.hasOwnProperty,r=Object.getOwnPro
       color: var(--yellow);
     }
   }
-`;function x({profile:e}){return i.createElement(y,null,i.createElement("img",{src:e.image_url,alt:e.name}),i.createElement("div",null,i.createElement("h2",null,e.name),i.createElement("p",null,i.createElement("span",{className:"rating"},"★ ",e.rating)," •"," ",e.category," • ",e.distance,"km")))}const k=o.h1`
+`;function x({profile:e}){return i.createElement(l,{to:`seller/${e.seller_id}`},i.createElement(y,null,i.createElement("img",{src:e.image_url,alt:e.name}),i.createElement("div",null,i.createElement("h2",null,e.name),i.createElement("p",null,i.createElement("span",{className:"rating"},"★ ",e.rating)," •"," ",e.category," • ",e.distance,"km"))))}const k=o.h1`
   font-weight: 800;
   font-size: 2.5rem;
   letter-spacing: -1px;
@@ -51,7 +51,7 @@ var e=Object.defineProperty,t=Object.prototype.hasOwnProperty,r=Object.getOwnPro
       transform: translate(0, 0);
     }
   }
-`;function j({children:e,animate:t}){return i.createElement(k,{animate:t},e)}const z=l.create({baseURL:"http://localhost:8080/"}),N=async()=>{const{data:e}=await z.get("/seller");return e},O=o.div`
+`;function j({children:e,animate:t}){return i.createElement(k,{animate:t},e)}const z=c.create({baseURL:"https://cb2e93d94a6b.ngrok.io/"}),N=async()=>{const{data:e}=await z.get("/seller");return e},O=o.div`
   height: 4rem;
   width: 100%;
 
@@ -78,7 +78,7 @@ var e=Object.defineProperty,t=Object.prototype.hasOwnProperty,r=Object.getOwnPro
       width: 5rem;
     }
   }
-`;function S(){const e=c();return i.createElement(O,null,i.createElement(s,{fontSize:24,onClick:e.goBack}),i.createElement(d,{to:"/"},i.createElement("img",{src:"https://logodownload.org/wp-content/uploads/2017/05/ifood-logo-01.png",alt:"iFood"})),i.createElement(d,{to:"/profile"},i.createElement(u,{fontSize:18})))}const F=o.div`
+`;function S(){const e=s();return i.createElement(O,null,i.createElement(d,{fontSize:24,onClick:e.goBack}),i.createElement(l,{to:"/"},i.createElement("img",{src:"https://logodownload.org/wp-content/uploads/2017/05/ifood-logo-01.png",alt:"iFood"})),i.createElement(l,{to:"/profile"},i.createElement(u,{fontSize:18})))}const F=o.div`
   position: fixed;
   bottom: 0;
   left: 0;
@@ -105,14 +105,14 @@ var e=Object.defineProperty,t=Object.prototype.hasOwnProperty,r=Object.getOwnPro
       }
     }
   }
-`;function C({active:e}){return i.createElement(F,null,i.createElement(d,{to:"/seller"},i.createElement("div",{className:"product"===e?"active":""},i.createElement(p,{fontSize:20}),i.createElement("p",null,"Vendedores"))),i.createElement(d,{to:"/"},i.createElement("div",{className:"home"===e?"active":""},i.createElement(g,{fontSize:20}),i.createElement("p",null,"Home"))),i.createElement(d,{to:"/profile"},i.createElement("div",{className:"profile"===e?"active":""},i.createElement(f,{fontSize:20}),i.createElement("p",null,"Perfil"))))}const R=o.div`
+`;function _({active:e}){return i.createElement(F,null,i.createElement(l,{to:"/seller"},i.createElement("div",{className:"product"===e?"active":""},i.createElement(p,{fontSize:20}),i.createElement("p",null,"Vendedores"))),i.createElement(l,{to:"/"},i.createElement("div",{className:"home"===e?"active":""},i.createElement(g,{fontSize:20}),i.createElement("p",null,"Home"))),i.createElement(l,{to:"/profile"},i.createElement("div",{className:"profile"===e?"active":""},i.createElement(f,{fontSize:20}),i.createElement("p",null,"Perfil"))))}const C=o.div`
   width: 100%;
   height: 100vh;
 
   .main-content-wrapper {
     padding-bottom: 4rem;
   }
-`;function _({title:e="iFood | Delivery",active:t,children:r}){return i.useEffect((()=>{document.title=e}),[]),i.createElement(R,null,i.createElement(S,null),i.createElement("main",{className:"main-content-wrapper"},r),i.createElement(C,{active:t}))}const $=o.div`
+`;function R({title:e="iFood | Delivery",active:t,children:r}){return i.useEffect((()=>{document.title=e}),[]),i.createElement(C,null,i.createElement(S,null),i.createElement("main",{className:"main-content-wrapper"},r),i.createElement(_,{active:t}))}const $=o.div`
   background: var(--gray-100);
 
   height: 16rem;
@@ -179,7 +179,7 @@ var e=Object.defineProperty,t=Object.prototype.hasOwnProperty,r=Object.getOwnPro
   }
 `,L=o.div`
   padding: 1rem;
-`;function q(){const[e,t]=i.useState();return i.useEffect((()=>{N().then((e=>t(e)))}),[]),i.createElement(_,{active:"home",title:"iFood | Delivery"},i.createElement($,{backgroundImage:"https://static-images.ifood.com.br/image/upload/t_high/webapp/landing/dish-right.png"},i.createElement("h1",null,"Nunca foi tão fácil pedir",i.createElement("br",null),i.createElement("b",null,"comida brasileira!")),i.createElement("button",null,"Pedir agora!")),i.createElement(L,null,i.createElement(j,{animate:!0},"Os melhores",i.createElement("br",null),"restaurantes",i.createElement("br",null),"do ",i.createElement("b",null,"iFood")),null==e?void 0:e.map((e=>i.createElement(x,{key:e.seller_id,profile:e})))))}function U(){return i.createElement(_,{active:"profile"},i.createElement(M,null,i.createElement(j,{animate:!0},i.createElement("b",null,"iFood")," clone"),i.createElement("h2",null,"Feito com ",i.createElement("span",null,"❤")," por"),i.createElement("div",{className:"profile-info"},i.createElement("div",null,i.createElement("img",{src:"/assets/eder-lima.e8b84582.jpg",alt:"Eder Lima"}),i.createElement("a",{target:"_blank",href:"https://github.com/Nxrth-x"},"Eder"," ")),i.createElement("div",null,i.createElement("img",{src:"/assets/elida-castro.49ef0b9e.jpg",alt:"Élida Castro"}),i.createElement("a",{target:"_blank",href:"https://github.com/elidacastro"},"Élida")),i.createElement("div",null,i.createElement("img",{src:"/assets/victoria-sampaio.b3cc5f5f.jpg",alt:"Victória Sampaio"}),i.createElement("a",{target:"_blank",href:"https://github.com/suzuyay"},"Victória")),i.createElement("div",null,i.createElement("img",{src:"/assets/vinicius-henrique.a96a9a82.jpg",alt:"Vinícius Henrique"}),i.createElement("a",{target:"_blank",href:"https://github.com/indiano-jpg"},"Vinícius")))))}const M=o.div`
+`;function q(){const[e,t]=i.useState();return i.useEffect((()=>{N().then((e=>t(e)))}),[]),i.createElement(R,{active:"home",title:"iFood | Delivery"},i.createElement($,{backgroundImage:"https://static-images.ifood.com.br/image/upload/t_high/webapp/landing/dish-right.png"},i.createElement("h1",null,"Nunca foi tão fácil pedir",i.createElement("br",null),i.createElement("b",null,"comida brasileira!")),i.createElement("button",null,"Pedir agora!")),i.createElement(L,null,i.createElement(j,{animate:!0},"Os melhores",i.createElement("br",null),"restaurantes",i.createElement("br",null),"do ",i.createElement("b",null,"iFood")),null==e?void 0:e.map((e=>i.createElement(x,{key:e.seller_id,profile:e})))))}function U(){return i.createElement(R,{active:"profile"},i.createElement(V,null,i.createElement(j,{animate:!0},i.createElement("b",null,"iFood")," clone"),i.createElement("h2",null,"Feito com ",i.createElement("span",null,"❤")," por"),i.createElement("div",{className:"profile-info"},i.createElement("div",null,i.createElement("img",{src:"/assets/eder-lima.e8b84582.jpg",alt:"Eder Lima"}),i.createElement("a",{target:"_blank",href:"https://github.com/Nxrth-x"},"Eder"," ")),i.createElement("div",null,i.createElement("img",{src:"/assets/elida-castro.49ef0b9e.jpg",alt:"Élida Castro"}),i.createElement("a",{target:"_blank",href:"https://github.com/elidacastro"},"Élida")),i.createElement("div",null,i.createElement("img",{src:"/assets/victoria-sampaio.b3cc5f5f.jpg",alt:"Victória Sampaio"}),i.createElement("a",{target:"_blank",href:"https://github.com/suzuyay"},"Victória")),i.createElement("div",null,i.createElement("img",{src:"/assets/vinicius-henrique.a96a9a82.jpg",alt:"Vinícius Henrique"}),i.createElement("a",{target:"_blank",href:"https://github.com/indiano-jpg"},"Vinícius")))))}const V=o.div`
   padding: 0 2rem;
 
   display: flex;
@@ -223,7 +223,39 @@ var e=Object.defineProperty,t=Object.prototype.hasOwnProperty,r=Object.getOwnPro
       }
     }
   }
-`,P=o.div`
+`;function M(){const e=s(),[t,r]=i.useState(5);return i.useEffect((()=>{0===t&&e.push("/");const m=setTimeout((()=>r((e=>e-1))),1e3);return()=>clearInterval(m)}),[t]),i.createElement(R,null,i.createElement(P,null,i.createElement("h1",null,"Seu pedido já está sendo enviado!"),i.createElement("img",{src:"/assets/delivery.1c4351c4.svg",alt:"Delivery"}),i.createElement("p",null,"Você será redirecionado(a) em ",t," segundos")))}const P=o.div`
+  overflow: hidden;
+
+  width: 100%;
+  height: calc(100vh - 8rem);
+
+  padding: 0 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1,
+  p {
+    text-align: center;
+  }
+
+  img {
+    margin: 1rem 0;
+    width: 8rem;
+    animation: animate-image 2s infinite;
+  }
+
+  @keyframes animate-image {
+    from {
+      transform: translate(-250%, 0);
+    }
+    to {
+      transform: translate(250%, 0);
+    }
+  }
+`,I=o.div`
   background: rgba(0, 0, 0, 0.5);
 
   display: flex;
@@ -241,7 +273,7 @@ var e=Object.defineProperty,t=Object.prototype.hasOwnProperty,r=Object.getOwnPro
     padding: 1rem;
     border-radius: 0.5rem;
   }
-`;function V({children:e,isOpen:t,onRequestClose:r}){return i.createElement(P,{isOpen:t,onClick:r},i.createElement("div",{className:"modal-content-wrapper",onClick:e=>e.stopPropagation()},e))}function I(){return i.createElement(A,null,i.createElement("div",{className:"loader"},"Loading..."))}const A=o.div`
+`;function A({children:e,isOpen:t,onRequestClose:r}){return i.createElement(I,{isOpen:t,onClick:r},i.createElement("div",{className:"modal-content-wrapper",onClick:e=>e.stopPropagation()},e))}function B(){return i.createElement(D,null,i.createElement("div",{className:"loader"},"Loading..."))}const D=o.div`
   width: 16rem;
 
   .loader {
@@ -332,7 +364,7 @@ var e=Object.defineProperty,t=Object.prototype.hasOwnProperty,r=Object.getOwnPro
       }
     }
   }
-`;function B(e){return i.createElement(V,a({},e),i.createElement(I,null))}const H=o.div`
+`;function H(e){return i.createElement(A,a({},e),i.createElement(B,null))}const Z=o.div`
   background: var(--gray-100);
 
   height: 16rem;
@@ -390,7 +422,7 @@ var e=Object.defineProperty,t=Object.prototype.hasOwnProperty,r=Object.getOwnPro
       box-shadow: var(--ring-primary);
     }
   }
-`,Z=o.div`
+`,Q=o.div`
   padding: 1rem;
 
   div.not-found {
@@ -399,7 +431,7 @@ var e=Object.defineProperty,t=Object.prototype.hasOwnProperty,r=Object.getOwnPro
       width: 100%;
     }
   }
-`,D=o.div`
+`,T=o.div`
   width: 100%;
 
   display: flex;
@@ -441,7 +473,7 @@ var e=Object.defineProperty,t=Object.prototype.hasOwnProperty,r=Object.getOwnPro
     width: 8rem;
     object-fit: cover;
   }
-`,Q=o.div`
+`,G=o.div`
   width: 100%;
   height: calc(100vh - 8rem);
 
@@ -471,7 +503,7 @@ var e=Object.defineProperty,t=Object.prototype.hasOwnProperty,r=Object.getOwnPro
 
     border-radius: 0.5rem;
   }
-`;function G({title:e="Erro",message:t="Algo de errado não está certo. :(",redirectURL:r="/"}){return i.createElement(_,{title:`iFood | ${e}`},i.createElement(Q,null,i.createElement("img",{src:"https://image.flaticon.com/icons/png/512/196/196759.png",alt:"Erro"}),i.createElement("h1",null,"Erro!"),i.createElement("p",null,t),i.createElement(d,{to:r},"Voltar")))}const J=o.div`
+`;function J({title:e="Erro",message:t="Algo de errado não está certo. :(",redirectURL:r="/"}){return i.createElement(R,{title:`iFood | ${e}`},i.createElement(G,null,i.createElement("img",{src:"https://image.flaticon.com/icons/png/512/196/196759.png",alt:"Erro"}),i.createElement("h1",null,"Erro!"),i.createElement("p",null,t),i.createElement(l,{to:r},"Voltar")))}const K=o.div`
   min-width: 212px;
   width: 80%;
 
@@ -564,9 +596,9 @@ var e=Object.defineProperty,t=Object.prototype.hasOwnProperty,r=Object.getOwnPro
       color: var(--white);
     }
   }
-`;function K(e){var{product:n}=e,o=((e,n)=>{var a={};for(var o in e)t.call(e,o)&&n.indexOf(o)<0&&(a[o]=e[o]);if(null!=e&&r)for(var o of r(e))n.indexOf(o)<0&&m.call(e,o)&&(a[o]=e[o]);return a})(e,["product"]);const[l,c]=i.useState(1),[s,d]=i.useState(1),u=(e,t)=>t>=10||t<1?e:t;return i.useEffect((()=>{d(l*n.price)}),[l]),i.createElement(V,a({},o),i.createElement(J,null,i.createElement("h1",null,n.name),i.createElement("div",{className:"quantity-menu"},i.createElement("h2",null,"Quantidade"),i.createElement("div",null,i.createElement("button",{onClick:()=>c((e=>u(e,e-1)))},"-"),i.createElement("input",{type:"number",value:l,readOnly:!0}),i.createElement("button",{onClick:()=>c((e=>u(e,e+1)))},"+"))),i.createElement("p",null,"Valor total: ",i.createElement("span",null,"R$",s.toFixed(2))),i.createElement("button",{className:"cancel",onClick:o.onRequestClose},"Cancelar"),i.createElement("button",{className:"submit",type:"submit",onClick:()=>{}},"Encomendar")))}function T({match:e}){const t=e.params.id,[r,m]=i.useState(),[n,a]=i.useState(!1),[o,l]=i.useState(!1),[c,s]=i.useState(),d=()=>l((e=>!e)),u=e=>()=>{s(e),d()};return i.useEffect((()=>{(async e=>{const{data:t}=await z.get(`/seller/${e}`);return t})(t).then((e=>m(e))).catch((e=>{console.log(e),a(!0)}))}),[]),n?i.createElement(G,null):r?r?i.createElement(i.Fragment,null,o&&c&&i.createElement(K,{isOpen:o,onRequestClose:d,product:c}),i.createElement(_,{active:"home",title:`iFood | ${r.name}`},i.createElement(H,null,i.createElement("h1",null,r.name),i.createElement("p",null,r.address),i.createElement("p",{className:"opening-hours"},"Aberto das ",r.opening_hours,"."),i.createElement("h2",null,r.category)),i.createElement(Z,null,r.products.length>0?i.createElement(i.Fragment,null,i.createElement(j,null,"Os ",i.createElement("b",null,"melhores")," ",i.createElement("br",null)," pratos"),r.products.map((e=>i.createElement(D,{key:e.product_id,onClick:u(e)},i.createElement("div",{className:"product-wrapper"},i.createElement("div",{className:"product-info-wrapper"},i.createElement("h2",null,e.name),i.createElement("p",null,e.description)),i.createElement("p",{className:"price"},"A partir de R$",e.price.toFixed(2))),i.createElement("img",{src:e.image_url,alt:e.name}))))):i.createElement("div",{className:"not-found"},i.createElement("h2",null,"Nenhum produto :("),i.createElement("p",null,"Este vendedor ainda não anunciou nenhum produto..."),i.createElement("img",{src:"https://dourasoft.com.br/site/dourasoft2017/wp-content/uploads/2017/09/sad-dog.jpg",alt:"Not found"}))))):i.createElement("div",null):i.createElement(B,{isOpen:!0,onRequestClose:()=>{}})}function W(){const[e,t]=i.useState();return i.useEffect((()=>{N().then((e=>t(e)))}),[]),i.createElement(_,{active:"product"},i.createElement(Y,null,i.createElement(j,{animate:!0},"Os melhores ",i.createElement("br",null),"do"," ",i.createElement("b",null,"iFood ",i.createElement(h,null)))),i.createElement(X,null,null==e?void 0:e.map((e=>i.createElement(x,{key:e.seller_id,profile:e})))))}const X=o.div`
+`;function W(e){var{product:n}=e,o=((e,n)=>{var a={};for(var o in e)t.call(e,o)&&n.indexOf(o)<0&&(a[o]=e[o]);if(null!=e&&r)for(var o of r(e))n.indexOf(o)<0&&m.call(e,o)&&(a[o]=e[o]);return a})(e,["product"]);const l=s(),[c,d]=i.useState(1),[u,p]=i.useState(1),g=(e,t)=>t>=10||t<1?e:t;return i.useEffect((()=>{p(c*n.price)}),[c]),i.createElement(A,a({},o),i.createElement(K,null,i.createElement("h1",null,n.name),i.createElement("div",{className:"quantity-menu"},i.createElement("h2",null,"Quantidade"),i.createElement("div",null,i.createElement("button",{onClick:()=>d((e=>g(e,e-1)))},"-"),i.createElement("input",{type:"number",value:c,readOnly:!0}),i.createElement("button",{onClick:()=>d((e=>g(e,e+1)))},"+"))),i.createElement("p",null,"Valor total: ",i.createElement("span",null,"R$",u.toFixed(2))),i.createElement("button",{className:"cancel",onClick:o.onRequestClose},"Cancelar"),i.createElement("button",{className:"submit",type:"submit",onClick:()=>l.push("/checkout")},"Encomendar")))}function X({match:e}){const t=e.params.id,[r,m]=i.useState(),[n,a]=i.useState(!1),[o,l]=i.useState(!1),[c,s]=i.useState(),d=()=>l((e=>!e)),u=e=>()=>{s(e),d()};return i.useEffect((()=>{(async e=>{const{data:t}=await z.get(`/seller/${e}`);return t})(t).then((e=>m(e))).catch((e=>{console.log(e),a(!0)}))}),[]),n?i.createElement(J,null):r?r?i.createElement(i.Fragment,null,o&&c&&i.createElement(W,{isOpen:o,onRequestClose:d,product:c}),i.createElement(R,{active:"product",title:`iFood | ${r.name}`},i.createElement(Z,null,i.createElement("h1",null,r.name),i.createElement("p",null,r.address),i.createElement("p",{className:"opening-hours"},"Aberto das ",r.opening_hours,"."),i.createElement("h2",null,r.category)),i.createElement(Q,null,r.products.length>0?i.createElement(i.Fragment,null,i.createElement(j,null,"Os ",i.createElement("b",null,"melhores")," ",i.createElement("br",null)," pratos"),r.products.map((e=>i.createElement(T,{key:e.product_id,onClick:u(e)},i.createElement("div",{className:"product-wrapper"},i.createElement("div",{className:"product-info-wrapper"},i.createElement("h2",null,e.name),i.createElement("p",null,e.description)),i.createElement("p",{className:"price"},"A partir de R$",e.price.toFixed(2))),i.createElement("img",{src:e.image_url,alt:e.name}))))):i.createElement("div",{className:"not-found"},i.createElement("h2",null,"Nenhum produto :("),i.createElement("p",null,"Este vendedor ainda não anunciou nenhum produto..."),i.createElement("img",{src:"https://dourasoft.com.br/site/dourasoft2017/wp-content/uploads/2017/09/sad-dog.jpg",alt:"Not found"}))))):i.createElement("div",null,"Aqui meu mano"):i.createElement(H,{isOpen:!0,onRequestClose:()=>{}})}function Y(){const[e,t]=i.useState();return i.useEffect((()=>{N().then((e=>t(e)))}),[]),i.createElement(R,{active:"product"},i.createElement(te,null,i.createElement(j,{animate:!0},"Os melhores ",i.createElement("br",null),"do"," ",i.createElement("b",null,"iFood ",i.createElement(h,null)))),i.createElement(ee,null,null==e?void 0:e.map((e=>i.createElement(x,{key:e.seller_id,profile:e})))))}const ee=o.div`
   padding: 1rem;
-`,Y=o.div`
+`,te=o.div`
   height: 14rem;
   background: #222;
 
@@ -576,4 +608,4 @@ var e=Object.defineProperty,t=Object.prototype.hasOwnProperty,r=Object.getOwnPro
   h1 {
     color: var(--white);
   }
-`;function ee(){return i.createElement(b,null,i.createElement(E,null,i.createElement(v,{exact:!0,path:"/",component:q}),i.createElement(v,{exact:!0,path:"/seller",component:W}),i.createElement(v,{path:"/teste",component:T}),i.createElement(v,{path:"/profile",component:U})))}w.render(i.createElement(i.StrictMode,null,i.createElement(ee,null)),document.getElementById("root"));
+`;function re(){return i.createElement(b,null,i.createElement(E,null,i.createElement(v,{exact:!0,path:"/",component:q}),i.createElement(v,{exact:!0,path:"/seller",component:Y}),i.createElement(v,{path:"/seller/:id",component:X}),i.createElement(v,{path:"/profile",component:U}),i.createElement(v,{path:"/checkout",component:M})))}w.render(i.createElement(i.StrictMode,null,i.createElement(re,null)),document.getElementById("root"));
