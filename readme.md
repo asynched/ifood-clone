@@ -52,3 +52,4 @@ Requisitos
 - [Élida Castro](https://github.com/elidacastro)
 - [Victória Sampaio](https://github.com/Suzuyay)
 - [Vinícius Henrique](https://github.com/indiano-jpg)
+- [Vinícius Rodrigues](https://github.com/viniccin)
